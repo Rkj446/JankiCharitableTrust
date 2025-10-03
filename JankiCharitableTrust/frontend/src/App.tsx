@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -57,6 +58,7 @@ export default function App() {
               <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />
             </Routes>
             <SpeedInsights />
+            <Analytics />
           </ToastProvider>
         </HelmetProvider>
       </BrowserRouter>
