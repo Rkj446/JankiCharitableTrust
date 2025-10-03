@@ -43,8 +43,11 @@ export default function Gallery() {
               <img
                 src={image}
                 alt={`Gallery image ${index + 1}`}
-                loading="lazy"
+                width={400}
+                height={400}
+                loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"
+                fetchPriority={index === 0 ? "high" : undefined}
                 sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                 onLoad={() => handleLoaded(index)}
                 className={`object-cover w-full h-full transform transition-transform duration-300 group-hover:scale-110 transition-opacity ${loaded[index] ? 'opacity-100' : 'opacity-0'}`}
