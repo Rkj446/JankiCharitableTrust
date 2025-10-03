@@ -1,5 +1,5 @@
-import { Facebook, Twitter, Instagram, Heart } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Instagram } from 'lucide-react';
+// ...existing code...
 import Logo from './Logo';
 
 export default function Footer() {

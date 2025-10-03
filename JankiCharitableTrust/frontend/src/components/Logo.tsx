@@ -29,7 +29,7 @@ export default function Logo({ size = 'md', animated = false, className = '' }: 
             className="w-full h-full object-contain"
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+                fetchPriority="high"
           />
         </div>
       </div>

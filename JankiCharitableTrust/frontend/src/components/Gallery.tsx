@@ -3,14 +3,14 @@ import { Card } from './ui/card';
 import { Skeleton } from './ui/skeleton';
 
 const images = [
-  '/gallery/image1.jpg',
-  '/gallery/image2.jpg',
-  '/gallery/image3.jpg',
-  '/gallery/image4.jpg',
-  '/gallery/image5.jpg',
-  '/gallery/image6.jpg',
-  '/gallery/image7.jpg',
-  '/gallery/image8.jpg',
+  '/gallery/WhatsApp Image 2025-10-02 at 17.42.59_072acfd9.jpg',
+  '/gallery/WhatsApp Image 2025-10-02 at 17.44.17_211f097e.jpg',
+  '/gallery/WhatsApp Image 2025-10-02 at 17.44.49_e00885a7.jpg',
+  '/gallery/WhatsApp Image 2025-10-02 at 17.45.50_f2818faa.jpg',
+  '/gallery/WhatsApp Image 2025-10-03 at 10.13.39_8d5926fd.jpg',
+  '/gallery/WhatsApp Image 2025-10-03 at 10.23.05_2466d5a1.jpg',
+  '/gallery/WhatsApp Image 2025-10-03 at 10.23.35_f4770f4e.jpg',
+  '/gallery/WhatsApp Image 2025-10-03 at 10.24.15_87de2aed.jpg',
 ];
 
 export default function Gallery() {
