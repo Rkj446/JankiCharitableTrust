@@ -8,11 +8,9 @@ interface LoadingBufferProps {
 }
 
 export default function LoadingBuffer({ onComplete }: LoadingBufferProps) {
-  const [showSkeleton, setShowSkeleton] = useState(false);
   useEffect(() => {
-    const skeletonTimer = setTimeout(() => setShowSkeleton(true), 250);
     const timeoutId = setTimeout(() => onComplete(), 1400);
-    return () => { clearTimeout(timeoutId); clearTimeout(skeletonTimer); };
+    return () => { clearTimeout(timeoutId); };
   }, [onComplete]);
 
   return (
@@ -32,15 +30,11 @@ export default function LoadingBuffer({ onComplete }: LoadingBufferProps) {
               transition={{ duration: 1, ease: 'linear', repeat: Infinity }}
             />
             <div className="absolute inset-6 flex items-center justify-center">
-              <Logo size="lg" animated={false} />
+              <Logo size="lg" animated={false} layoutId="main-logo" />
             </div>
           </div>
         </div>
-        {showSkeleton && (
-          <div className="mt-8 w-full max-w-5xl">
-            <PageSkeleton />
-          </div>
-        )}
+        {/* Only show logo and loader, no skeleton */}
       </motion.div>
     </AnimatePresence>
   );

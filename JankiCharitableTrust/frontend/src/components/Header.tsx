@@ -61,7 +61,7 @@ export default function Header() {
         aria-label="Main Navigation"
       >
         <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Home">
-          <Logo size="lg" animated={true} />
+          <Logo size="lg" animated={true} layoutId="main-logo" />
           <span className="font-bold text-xl text-foreground">{site.name}</span>
         </Link>
         <div className="hidden md:flex gap-2 items-center">

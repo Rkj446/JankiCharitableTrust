@@ -162,7 +162,7 @@ export default function Contact() {
                 <div className="space-y-6">
                   <div>
                     <h4 className="font-semibold mb-2 text-foreground">Address</h4>
-                    <p className="text-foreground/80">Hooghly, West Bengal, India</p>
+                    <p className="text-foreground/80">Janki Charitable Trust, Hooghly, West Bengal, India</p>
                     <p className="text-sm text-muted-foreground mt-1">Near the heart of the community we serve</p>
                   </div>
                   <div>
@@ -171,7 +171,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2 text-foreground">Phone</h4>
-                    <p className="text-foreground/80">+91 123 456 7890</p>
+                    <p className="text-foreground/80">+91 8100249446</p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2 text-foreground">Hours</h4>

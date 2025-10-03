@@ -6,7 +6,7 @@ interface LogoProps {
   className?: string;
 }
 
-export default function Logo({ size = 'md', animated = false, className = '' }: LogoProps) {
+export default function Logo({ size = 'md', animated = false, className = '', layoutId }: LogoProps & { layoutId?: string }) {
   const sizeClasses = {
     sm: 'w-10 h-10',
     md: 'w-14 h-14',
@@ -17,6 +17,7 @@ export default function Logo({ size = 'md', animated = false, className = '' }: 
   return (
     <motion.div
       className={`relative ${sizeClasses[size]} ${className}`}
+      layoutId={layoutId}
       whileHover={animated ? { scale: 1.03 } : {}}
       whileTap={animated ? { scale: 0.97 } : {}}
     >
