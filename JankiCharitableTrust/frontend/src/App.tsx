@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -55,6 +56,7 @@ export default function App() {
               <Route path="/projects/:slug" element={<Layout><ProjectDetails /></Layout>} />
               <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />
             </Routes>
+            <SpeedInsights />
           </ToastProvider>
         </HelmetProvider>
       </BrowserRouter>
