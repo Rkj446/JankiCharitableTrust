@@ -51,16 +51,13 @@ export default function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 pointer-events-none">
+    <header className="fixed top-5 left-0 w-full z-50 pointer-events-none">
       <nav
-        className={`pointer-events-auto max-w-6xl mx-auto flex items-center justify-between px-4 rounded-3xl transition-all duration-300 backdrop-blur-md border ${
+        className={`pointer-events-auto max-w-6xl mx-3 md:mx-auto flex items-center justify-between px-4 py-3 rounded-3xl transition-all duration-300 backdrop-blur-md border ${
           scrolled
-            ? 'py-2 bg-white/90 dark:bg-black/70 shadow-2xl border-border/70 scale-95'
-            : 'py-5 bg-white/70 dark:bg-black/50 shadow-lg border-border/50 scale-100'
+            ? 'bg-white/85 dark:bg-black/60 shadow-xl border-border/60'
+            : 'bg-white/70 dark:bg-black/50 shadow-lg border-border/50'
         }`}
-        style={{
-          transition: 'all 0.3s cubic-bezier(.4,0,.2,1)',
-        }}
         aria-label="Main Navigation"
       >
         <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Home">
