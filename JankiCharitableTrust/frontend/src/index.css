@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - refined for better navbar contrast */
+    --background: 210 20% 98%; /* soft near-white */
+    --foreground: 230 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 12%;
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    /* Brand colors */
+    --primary: 28 92% 50%; /* saffron, slightly toned */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 230 15% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 42 95% 50%; /* golden */
+    --accent-foreground: 230 15% 12%;
+    --muted: 220 16% 94%;
+    --muted-foreground: 230 8% 38%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 28 92% 50%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark mode - Optimized for better contrast and readability */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    /* Enhanced dark mode brand colors */
+    --primary: 25 95% 58%; /* Brighter saffron for dark mode */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 45 93% 52%; /* Brighter golden accent */
+    --accent-foreground: 0 0% 9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 25 95% 58%;
+  }
+}
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+  }
+  #root { overflow-x: hidden; }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+  /* Enhanced gradient backgrounds */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+  
+  .gradient-card {
+    @apply bg-gradient-to-br from-card to-card/80;
+  }
+  
+  .gradient-hero {
+    @apply bg-gradient-to-br from-primary/10 via-accent/5 to-transparent;
+  }
+  
+  /* Enhanced shadows */
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+  }
+  
+  .shadow-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-card-dark {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Enhanced hover effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  /* Enhanced focus states */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .text-7xl {
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+    
+    .text-6xl {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+    
+    .text-5xl {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+  }
+  
+  /* Removed global smooth scrolling to avoid unexpected scroll jumps */
+  
+  /* Enhanced animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  /* Dark mode specific improvements */
+  .dark .shadow-glow {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
+  }
+  
+  .dark .gradient-hero {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(255, 69, 0, 0.05) 50%, transparent 100%);
+  }
+}
