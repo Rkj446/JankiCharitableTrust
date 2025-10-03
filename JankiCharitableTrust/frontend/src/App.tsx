@@ -24,16 +24,24 @@ import ScrollToTop from './components/ScrollToTop';
 const queryClient = new QueryClient();
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  // Show loading only for slow connections
+  const getShouldShowLoading = () => {
+    if (typeof navigator !== 'undefined' && navigator.connection && navigator.connection.effectiveType) {
+      const type = navigator.connection.effectiveType;
+      return type === '2g' || type === '3g';
+    }
+    return false;
+  };
+
+  const [isLoading, setIsLoading] = useState(getShouldShowLoading());
 
   useEffect(() => {
-    // Simulate loading time
+    if (!isLoading) return;
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-
     return () => clearTimeout(timer);
-  }, []);
+  }, [isLoading]);
 
   if (isLoading) {
     return <LoadingBuffer onComplete={() => setIsLoading(false)} />;
